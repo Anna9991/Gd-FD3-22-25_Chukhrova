@@ -46,14 +46,14 @@ function ItemShopTable(props: ItemShopTableProps) { // table
         </tr>
       </thead>
       <tbody>
-        {props.items.map((i) => (
+        {props.items.map(i =>
           <tr>
             <td><img src={i.url} alt={i.label} /></td>
             <td>{i.label}</td>
             <td>₽{i.price}</td>
             <td>{i.count}</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );
@@ -120,19 +120,19 @@ function App() {
           <h1>IShop</h1>
         </div>
         <nav className="menu">
-          {menuItems.map((i) => ( <a href={i.link}>{i.label}</a> ))}
+          {menuItems.map(i => <a href={i.link}>{i.label}</a> )}
         </nav>
       </header>
 
       {/* grid implementation */}
       {/* <main className="main-grid">
-        {shopItems.map((i) => (
+        {shopItems.map(i =>
           <ItemShop 
           label={i.label}
           price={i.price}
           url={i.url}
           count={i.count}
-        /> ))}
+        />)}
       </main> */}
 
       {/* table implementation */}
