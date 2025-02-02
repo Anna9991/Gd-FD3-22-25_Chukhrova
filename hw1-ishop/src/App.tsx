@@ -20,6 +20,59 @@ type ItemShopTableProps = {
 }
 
 
+const menuItems: MenuItem[] = [
+  { label: "Главная", link: "/" },
+  { label: "Товары", link: "/" },
+  { label: "О нас", link: "/" },
+  { label: "Контакты", link: "/" },
+];
+
+const shopItems: ItemShopProps[] = [
+  {
+    label: "Laptop",
+    price: 1000,
+    url: "https://picsum.photos/id/2/400/300",
+    count: 3,
+  },
+  {
+    label: "Laptop2",
+    price: 1000,
+    url: "https://picsum.photos/id/2/400/300",
+    count: 5,
+  },
+  {
+    label: "Mug",
+    price: 30,
+    url: "https://picsum.photos/id/30/400/300",
+    count: 10,
+  },
+  {
+    label: "Mug2",
+    price: 30,
+    url: "https://picsum.photos/id/30/400/300",
+    count: 15,
+  },
+  {
+    label: "High heel shoes",
+    price: 100,
+    url: "https://picsum.photos/id/21/400/300",
+    count: 1,
+  },
+  {
+    label: "High heel shoes2",
+    price: 100,
+    url: "https://picsum.photos/id/21/400/300",
+    count: 2,
+  },
+  {
+    label: "Berries",
+    price: 10,
+    url: "https://picsum.photos/id/102/400/300",
+    count: 15,
+  },
+];
+
+
 // components
 function ItemShop(props: ItemShopProps) { // grid
   return (
@@ -46,8 +99,8 @@ function ItemShopTable(props: ItemShopTableProps) { // table
         </tr>
       </thead>
       <tbody>
-        {props.items.map(i =>
-          <tr>
+        {props.items.map((i, idx) =>
+          <tr key={idx}>
             <td><img src={i.url} alt={i.label} /></td>
             <td>{i.label}</td>
             <td>₽{i.price}</td>
@@ -60,59 +113,6 @@ function ItemShopTable(props: ItemShopTableProps) { // table
 }
 
 function App() {
-  const menuItems: MenuItem[] = [
-    { label: "Главная", link: "/" },
-    { label: "Товары", link: "/" },
-    { label: "О нас", link: "/" },
-    { label: "Контакты", link: "/" },
-  ];
-
-
-  const shopItems: ItemShopProps[] = [
-    {
-      label: "Laptop",
-      price: 1000,
-      url: "https://picsum.photos/id/2/400/300",
-      count: 3,
-    },
-    {
-      label: "Laptop2",
-      price: 1000,
-      url: "https://picsum.photos/id/2/400/300",
-      count: 5,
-    },
-    {
-      label: "Mug",
-      price: 30,
-      url: "https://picsum.photos/id/30/400/300",
-      count: 10,
-    },
-    {
-      label: "Mug2",
-      price: 30,
-      url: "https://picsum.photos/id/30/400/300",
-      count: 15,
-    },
-    {
-      label: "High heel shoes",
-      price: 100,
-      url: "https://picsum.photos/id/21/400/300",
-      count: 1,
-    },
-    {
-      label: "High heel shoes2",
-      price: 100,
-      url: "https://picsum.photos/id/21/400/300",
-      count: 2,
-    },
-    {
-      label: "Berries",
-      price: 10,
-      url: "https://picsum.photos/id/102/400/300",
-      count: 15,
-    },
-  ];
-
   return (
     <div className="App">
       <header className="App-header">
@@ -120,7 +120,7 @@ function App() {
           <h1>IShop</h1>
         </div>
         <nav className="menu">
-          {menuItems.map(i => <a href={i.link}>{i.label}</a> )}
+          {menuItems.map((i, idx) => <a href={i.link} key={idx}>{i.label}</a> )}
         </nav>
       </header>
 
