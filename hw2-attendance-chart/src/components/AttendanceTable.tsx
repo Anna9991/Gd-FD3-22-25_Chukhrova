@@ -6,11 +6,11 @@ export type AttendanceTableProps = {
   students: string[];
   dates: string[];
   attendance: Record<string, Record<string, boolean>>;
+  isSaving: boolean;
   setAttendanceTable: (student: string, date: string) => void;
+  saveData: () => void;
   addDate: () => void;
   addStudent: () => void;
-  saveData: () => void;
-  isSaving: boolean;
 }
 
 
@@ -56,7 +56,7 @@ export function AttendanceTable(props: AttendanceTableProps) {
         {"Добавить дату"}
       </button>
       <button onClick={props.saveData} disabled={props.isSaving} style={btnStyle}>
-        {props.isSaving ? "Сохранение" : "Сохранить"}
+        {props.isSaving ? "Cохранение" : "Сохранить"}
       </button>
     </div>
   );
