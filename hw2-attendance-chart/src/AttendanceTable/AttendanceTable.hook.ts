@@ -1,12 +1,5 @@
 import { useState, useEffect } from 'react';
-
-
-// type 
-export type JsonData = {
-  students: string[],
-  dates: string[],
-  attendance: Record<string, Record<string, boolean>>
-}
+import { JsonData } from './types';
 
 
 const LOCAL_STORAGE_KEY = "attendance";

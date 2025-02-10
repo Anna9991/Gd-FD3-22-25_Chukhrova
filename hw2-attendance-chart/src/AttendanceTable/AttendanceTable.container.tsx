@@ -1,29 +1,18 @@
 import React from 'react';
-
-
-// type
-export type AttendanceTableProps = {
-  students: string[];
-  dates: string[];
-  attendance: Record<string, Record<string, boolean>>;
-  isSaving: boolean;
-  setAttendanceTable: (student: string, date: string) => void;
-  saveData: () => void;
-  addDate: () => void;
-  addStudent: () => void;
-}
+import { AttendanceTableProps } from './types';
 
 
 // styles for AttendanceTable
-const dataStyle = { padding: "10px", textAlign: "center" };
-const dataAttendanceStyle = { padding: "10px", textAlign: "center", cursor: "pointer" };
-const btnStyle = { margin: "10px", textAlign: "center" };
+const dataStyle: React.CSSProperties = { padding: "10px", textAlign: "center" };
+const dataAttendanceStyle: React.CSSProperties = { padding: "10px", textAlign: "center", cursor: "pointer" };
+const btnStyle: React.CSSProperties = { margin: "10px", textAlign: "center" };
+// const tableStyle: React.CSSProperties = {border="1"};
 
 
-export function AttendanceTable(props: AttendanceTableProps) {
+export function AttendanceTableContainer(props: AttendanceTableProps) {
   return (
     <div>
-      <table border="1">
+      <table border={1}>
         <thead>
           <tr>
             <th style={dataStyle}>{"№"}</th>
