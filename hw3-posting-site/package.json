@@ -1,13 +1,14 @@
 {
-  "name": "hw1-ishop",
+  "name": "hw3-posting-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "cra-template-typescript": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router": "^7.1.5",
     "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4"
+    "styled-components": "^6.1.15"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,5 +33,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@svgr/webpack": "^8.1.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3"
   }
 }
