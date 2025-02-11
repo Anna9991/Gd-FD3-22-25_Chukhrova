@@ -1,5 +1,9 @@
 
 
 export function getIds(): number[] {
-  return Array.from({ length: 20}, () => Math.floor(Math.random() * 100) + Math.floor(Math.random() * 10));
+  const nums = new Set<number>();
+  while (nums.size < 20) {
+    nums.add(Math.floor(Math.random() * 300));
+  }
+  return Array.from(nums);
 }
