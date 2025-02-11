@@ -1,11 +1,14 @@
 import { PageContainerWithOutletsStyled, FixContainerStyled } from '../../styles/PageContainer.styled'
 import { NavPageStyled, LinkPageStyled } from '../../styles/NavContainer.styled'
 import { Outlet } from 'react-router';
+import { useColorThemeContext } from '../../context/themeContext';
 
 
 export function ContactPage() {
+  const { theme } = useColorThemeContext();
+  
   return (
-    <PageContainerWithOutletsStyled>
+    <PageContainerWithOutletsStyled theme={theme}>
       <img src="https://picsum.photos/id/102/400/300" alt="Placeholder" />
 
       <FixContainerStyled>

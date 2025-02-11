@@ -1,6 +1,7 @@
 import { PageContainerStyled } from '../../styles/PageContainer.styled'
 import { LinkPageStyled } from '../../styles/NavContainer.styled'
 import { useState, useEffect } from 'react';
+import { useColorThemeContext } from '../../context/themeContext';
 
 
 const SESSION_STORAGE_KEY = "postIDs";
@@ -8,6 +9,7 @@ const SESSION_STORAGE_KEY = "postIDs";
 
 export function StartPage() {
   const [post, setPost] = useState(1);
+  const { theme } = useColorThemeContext();
 
   useEffect(() => {
     try {
@@ -25,7 +27,7 @@ export function StartPage() {
   }, []);
 
   return (
-    <PageContainerStyled>
+    <PageContainerStyled theme={theme}>
       <h1>Welcome!</h1>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, asperiores quo ab dicta 
         voluptatum accusantium sint. Vel vero reiciendis dolorum veritatis, pariatur, quisquam in adipisci minima fugiat 

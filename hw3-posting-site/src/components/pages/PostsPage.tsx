@@ -2,6 +2,7 @@ import { PageContainerStyled } from '../../styles/PageContainer.styled'
 import { LinkPageStyled } from '../../styles/NavContainer.styled'
 import { useState, useEffect } from 'react';
 import { getIds } from '../../utils/getIds'
+import { useColorThemeContext } from '../../context/themeContext';
 
 
 const SESSION_SROTAGE_KEY = "postIDs";
@@ -9,6 +10,7 @@ const SESSION_SROTAGE_KEY = "postIDs";
 
 export function PostsPage() {
   const [postId, setPostId] = useState<number[]>([]);
+  const { theme } = useColorThemeContext();
 
   useEffect(() => {
     try {
@@ -29,7 +31,7 @@ export function PostsPage() {
 
 
   return (
-    <PageContainerStyled>
+    <PageContainerStyled theme={theme}>
       <h2>Let's read Posts!</h2>
       <ol>
         {postId.map(id => (
