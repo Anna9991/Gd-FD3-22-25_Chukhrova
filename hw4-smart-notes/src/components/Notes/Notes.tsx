@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../store/store";
 import { ButtonStyled } from "../../styles/Button.styled";
 import { InputStyled, SelectStyled } from "../../styles/Input.styled";
@@ -35,7 +34,7 @@ export function Notes() {
     }
   });
 
-  
+
   function viewNote(note: NoteState) {
     setEditNote(note);
     setModalView(true);

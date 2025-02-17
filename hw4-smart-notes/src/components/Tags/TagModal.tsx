@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { TagState } from "../../store/types";
-import { InputAddStyled, InputStyled } from "../../styles/Input.styled";
+import { InputAddStyled } from "../../styles/Input.styled";
 import { addTag, renameTag } from "../../store/Slices/tagsSlice";
 
 
