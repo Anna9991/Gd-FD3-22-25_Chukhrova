@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { AppContainerStyled } from './styles/AppContainer.styled';
 import { NotesContainerStyled, TagsContainerStyled } from './styles/NotesTagsContainer.styled';
-import { Notes } from './components/Notes';
-import { Tags } from './components/Tags'
+import { Notes } from './components/Notes/Notes';
+import { Tags } from './components/Tags/Tags'
 import { Provider } from 'react-redux';
 import { store } from './store/store'
 
